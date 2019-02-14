@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~ng-snotify/styles/material";
+@import "~ng-snotify/styles/material.css";
+@import "~ng-snotify/styles/material";
+@import "~ng-snotify/styles/simple";
+@import "~ng-snotify/styles/dark";

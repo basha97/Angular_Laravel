@@ -42,7 +42,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    this.notify.simple('wait',{timeout: 1000});
       this.jarwish.login(this.form).subscribe(
         data => this.handleResponse(data),
         error => this.handleError(error) 
@@ -50,13 +49,14 @@ export class LoginComponent implements OnInit {
   }
 
   handleResponse(data){
-    this.notify.info('Login Success', {timeout: 3000});
+    this.notify.success('You are logged in', {timeout: 3000});
     this.token.handle(data.access_token);
     this.auth.changeAuthStatus(true);
     this.router.navigateByUrl('/dashboard');
 }
 
 handleError(error){
+    this.notify.error('Wrong Crendential');
     this.error = error.error.error;
 }
 

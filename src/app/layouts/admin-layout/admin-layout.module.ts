@@ -12,6 +12,8 @@ import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { ApplicationComponent } from '../../application/application.component';
+import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
+
 // import { LoginComponent } from '../../login/login.component';
 
 
@@ -36,6 +38,7 @@ import {
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    SnotifyModule,
   ],
   declarations: [
     DashboardComponent,
@@ -48,7 +51,11 @@ import {
     UpgradeComponent,
     ApplicationComponent,
     // LoginComponent,
-  ]
+  ],
+  providers: [
+    { provide: 'SnotifyToastConfig', useValue: ToastDefaults},
+    SnotifyService
+  ],
 })
 
 export class AdminLayoutModule {
