@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
+      this.notify.info('Wait a moment',{timeout: 2000});
       this.jarwish.login(this.form).subscribe(
         data => this.handleResponse(data),
         error => this.handleError(error) 
