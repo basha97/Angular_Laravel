@@ -30,11 +30,11 @@ export class TokenService  {
 
     isValid(){
         const token = this.get();
-        console.log(token);
+        
 
         if(token){
             const payload = this.payload(token);
-            console.log(payload);
+            
             if(payload){
                 return  Object["values"](this.iss).indexOf(payload.iss) > -1 ? true : false; 
             }
